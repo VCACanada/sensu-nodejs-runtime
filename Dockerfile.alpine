@@ -1,7 +1,7 @@
 # Inspired by https://github.com/sensu/sensu-ruby-runtime/blob/main/Dockerfile.alpine
 
 # cat /etc/os-release to find Alpine version of current sensu/sensu image
-FROM alpine:3.12.3
+FROM alpine:3.16
 
 ARG NODE_VERSION=16.19.1
 ARG ASSET_VERSION=local-build
