@@ -1,7 +1,7 @@
 # cat /etc/redhat-release to find Alpine version of current sensu/sensu-rhel image
 FROM centos:7
 
-ARG NODE_VERSION=12.22.1
+ARG NODE_VERSION=16.19.1
 ARG ASSET_VERSION=local-build
 
 RUN mkdir -p /opt/nodejs && cd /opt/nodejs && \

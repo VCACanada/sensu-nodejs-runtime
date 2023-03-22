@@ -2,7 +2,7 @@
 # Inspired by https://github.com/sensu/sensu-ruby-runtime/blob/main/build_and_test_platform.sh
 
 ignore_errors=0
-node_version=12.22.1
+node_version=16.19.1
 asset_version=${TAG:-local-build}
 asset_filename=sensu-nodejs-runtime_${asset_version}_nodejs-${node_version}_${platform}_linux_amd64.tar.gz
 asset_image=sensu-nodejs-runtime-${node_version}-${platform}:${asset_version}

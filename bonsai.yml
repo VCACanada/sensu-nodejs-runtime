@@ -2,7 +2,7 @@ description: "#{repo}"
 builds:
 - platform: "linux"
   arch: "amd64"
-  asset_filename: "#{repo}_#{version}_nodejs-12.22.1_generic_linux_amd64.tar.gz"
+  asset_filename: "#{repo}_#{version}_nodejs-16.19.1_generic_linux_amd64.tar.gz"
   sha_filename: "#{repo}_#{version}_sha512-checksums.txt"
   filter:
   -  "entity.system.os == 'linux'"
@@ -10,7 +10,7 @@ builds:
   -  "entity.system.platform_family == 'debian' || entity.system.platform_family == 'rhel'"
 - platform: "alpine"
   arch: "amd64"
-  asset_filename: "#{repo}_#{version}_nodejs-12.22.1_alpine_linux_amd64.tar.gz"
+  asset_filename: "#{repo}_#{version}_nodejs-16.19.1_alpine_linux_amd64.tar.gz"
   sha_filename: "#{repo}_#{version}_sha512-checksums.txt"
   filter:
   -  "entity.system.os == 'linux'"
