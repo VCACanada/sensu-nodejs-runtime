@@ -1,9 +1,9 @@
 # Inspired by https://github.com/sensu/sensu-ruby-runtime/blob/main/Dockerfile.alpine
 
 # cat /etc/os-release to find Alpine version of current sensu/sensu image
-FROM alpine:3.16
+FROM alpine:3.19
 
-ARG NODE_VERSION=16.19.1
+ARG NODE_VERSION=20.11.0-r0
 ARG ASSET_VERSION=local-build
 
 RUN apk add nodejs~=${NODE_VERSION} && \
