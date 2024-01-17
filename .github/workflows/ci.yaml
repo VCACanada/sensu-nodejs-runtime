@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Checkout
       id: checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Get the version
       id: get_version
       if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
