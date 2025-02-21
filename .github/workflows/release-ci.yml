@@ -1,0 +1,55 @@
+name: Build and release packages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+    paths-ignore:
+      - ".github/**"
+
+env:
+  NODE_VERSION: "22.14.0"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build --build-arg="NODE_VERSION=${{ env.NODE_VERSION }}" -t sensu-nodejs-runtime:latest .
+
+      - name: Export packages
+        run: |
+          docker run --rm -v "$(pwd)/dist:/dist" sensu-nodejs-runtime cp -R /assets/. /dist/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: exported-packages
+          path: /dist/
+
+  release:
+    if: success()
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: exported-packages
+          path: /dist/
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: nodejs-v${{ env.NODE_VERSION }}
+          body: Node.js v${{ env.NODE_VERSION }}
+          files: /dist/*
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
