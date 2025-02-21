@@ -43,13 +43,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: exported-packages
-          path: /dist/
+          path: "${{ github.workspace }}/dist/"
 
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: nodejs-v${{ env.NODE_VERSION }}
           body: Node.js v${{ env.NODE_VERSION }}
-          files: /dist/*
+          files: "${{ github.workspace }}/dist/*"
         env:
           GITHUB_TOKEN: ${{ github.token }}
