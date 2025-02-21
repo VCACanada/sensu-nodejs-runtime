@@ -21,8 +21,8 @@ RUN curl -fsSL https://nodejs.org/dist/v${NODE_VERSION}/${WIN_ARCH}/node.exe -o 
 
 # Package Linux binary
 RUN tar -czvf /assets/sensu-nodejs-runtime_${NODE_VERSION}_node-v${NODE_VERSION}_linux_amd64.tar.gz -C /tmp/linux bin && \
-  sha512sum /assets/sensu-nodejs-runtime_${NODE_VERSION}_node-v${NODE_VERSION}_linux_amd64.tar.gz > /assets/sensu-nodejs-runtime-${NODE_VERSION}_sha512-checksums.txt
+  sha512sum /assets/sensu-nodejs-runtime_${NODE_VERSION}_node-v${NODE_VERSION}_linux_amd64.tar.gz > /assets/sensu-nodejs-runtime_${NODE_VERSION}_sha512-checksums.txt
 
 # Package Windows binary
 RUN tar -czvf /assets/sensu-nodejs-runtime_${NODE_VERSION}_node-v${NODE_VERSION}_windows_amd64.tar.gz -C /tmp/windows bin && \
-  sha512sum /assets/sensu-nodejs-runtime_${NODE_VERSION}_node-v${NODE_VERSION}_windows_amd64.tar.gz >> /assets/sensu-nodejs-runtime-${NODE_VERSION}_sha512-checksums.txt
+  sha512sum /assets/sensu-nodejs-runtime_${NODE_VERSION}_node-v${NODE_VERSION}_windows_amd64.tar.gz >> /assets/sensu-nodejs-runtime_${NODE_VERSION}_sha512-checksums.txt
