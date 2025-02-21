@@ -25,7 +25,7 @@ jobs:
 
       - name: Export packages
         run: |
-          docker run --rm -v "$(pwd)/dist:/dist" sensu-nodejs-runtime cp -R /assets/. /dist/
+          docker run --rm -v "${{ github.workspace }}/dist:/dist" sensu-nodejs-runtime cp -R /assets/. /dist/
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
