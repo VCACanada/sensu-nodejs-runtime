@@ -4,6 +4,8 @@ This project is based on [mjiderhamn/sensu-nodejs-runtime](https://github.com/mj
 
 This runtime asset should allow Node.js-based scripts to be packaged as separate assets containing Node.js scripts.
 
+The version of the releases correspond to the Node.js version.
+
 ## Platform Coverage
 
 This repository supports the following platforms:

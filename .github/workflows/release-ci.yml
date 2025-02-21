@@ -48,7 +48,7 @@ jobs:
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ env.NODE_VERSION }}
+          tag_name: ${{ env.NODE_VERSION }}
           body: Node.js v${{ env.NODE_VERSION }}
           files: "${{ github.workspace }}/dist/*"
         env:
